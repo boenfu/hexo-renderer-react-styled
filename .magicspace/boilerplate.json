@@ -1,0 +1,16 @@
+{
+  "extends": "@mufan/code-boilerplates/typescript",
+  "options": {
+    "name": "hexo-renderer-react-styled",
+    "license": "MIT",
+    "author": "boenfu",
+    "tsProjects": [
+      {
+        "name": "library"
+      },
+      {
+        "name": "test"
+      }
+    ]
+  }
+}
