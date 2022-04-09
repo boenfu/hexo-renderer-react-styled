@@ -26,7 +26,8 @@
     "@types/hexo": "^3.8.7",
     "@types/node": "^17.0.23",
     "sucrase": "^3.21.0",
-    "tslib": "^2.3.1"
+    "tslib": "^2.3.1",
+    "vm2": "^3.9.9"
   },
   "peerDependencies": {
     "react": ">=16.0.0",
