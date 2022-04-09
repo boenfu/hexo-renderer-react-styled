@@ -53,6 +53,8 @@ export interface ComponentProps<
   path: string;
   url: string;
   env: Hexo['env'];
+  // layout use
+  body?: string;
   // helpers
 
   /// https://hexo.io/zh-cn/docs/helpers#%E7%BD%91%E5%9D%80
@@ -139,7 +141,14 @@ export interface ComponentProps<
   escape_html(str: string): string;
 
   /// https://hexo.io/zh-cn/docs/helpers#%E6%A8%A1%E6%9D%BF
-  partial(layout: string, cache?: boolean, only?: boolean): string;
+  partial(
+    layout: string,
+    locals?: any,
+    options?: {
+      cache?: boolean;
+      only?: boolean;
+    },
+  ): string;
   fragment_cache(id: string, fn: () => string): string;
 
   /// https://hexo.io/zh-cn/docs/helpers#%E6%97%A5%E6%9C%9F%E4%B8%8E%E6%97%B6%E9%97%B4
