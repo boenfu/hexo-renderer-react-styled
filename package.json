@@ -23,6 +23,7 @@
     "prepublishOnly": "yarn test"
   },
   "dependencies": {
+    "@types/hexo": "^3.8.7",
     "@types/node": "^17.0.23",
     "sucrase": "^3.21.0",
     "tslib": "^2.3.1"

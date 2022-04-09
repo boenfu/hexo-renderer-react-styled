@@ -5,6 +5,8 @@ import {renderToStaticMarkup} from 'react-dom/server';
 import {ServerStyleSheet, StyleSheetManager} from 'styled-components';
 import {transform} from 'sucrase';
 
+import {ComponentProps} from './props';
+
 export async function renderer(
   {
     text,
@@ -13,7 +15,7 @@ export async function renderer(
     text: string;
     path?: string;
   },
-  options: unknown,
+  props: ComponentProps,
 ): Promise<string> {
   let sheet = new ServerStyleSheet();
 
@@ -37,7 +39,7 @@ export async function renderer(
     let html = renderToStaticMarkup(
       createElement(StyleSheetManager, {
         sheet: sheet.instance,
-        children: createElement(context.exports.default, Object(options)),
+        children: createElement(context.exports.default, props),
       }),
     );
 

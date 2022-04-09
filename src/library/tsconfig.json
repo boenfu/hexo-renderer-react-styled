@@ -2,7 +2,8 @@
   "extends": "@mufan/code/tsconfig.json",
   "compilerOptions": {
     "composite": true,
-    "types": ["node"],
+    "lib": ["DOM", "ESNext"],
+    "types": ["node", "hexo"],
     "outDir": "../../bld/library"
   }
 }

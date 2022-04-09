@@ -22,9 +22,7 @@ const Text = styled.span`
   }
 `;
 
-const Test: FC<unknown> = props => {
-  console.info(props);
-
+const Test: FC = () => {
   return (
     <App>
       <Text>hexo-renderer-react-styled</Text>
