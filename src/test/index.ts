@@ -10,12 +10,12 @@ import {renderer} from '../../bld/library/@renderer';
 (async () => {
   let props!: ComponentProps;
 
+  let filePath = Path.join(__dirname, '../../src/test/@app.tsx');
+
   let result = await renderer(
     {
-      text: await FS.readFile(
-        Path.join(__dirname, '../../src/test/@app.tsx'),
-        'utf8',
-      ),
+      text: await FS.readFile(filePath, 'utf8'),
+      path: filePath,
     },
     props,
   );
