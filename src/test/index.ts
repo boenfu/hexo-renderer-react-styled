@@ -1,6 +1,8 @@
 import * as FS from 'fs/promises';
 import * as Path from 'path';
 
+import 'require-tsx';
+
 // eslint-disable-next-line @mufan/import-path-shallowest
 import {ComponentProps} from '../../bld/library';
 // eslint-disable-next-line @mufan/import-path-shallowest
