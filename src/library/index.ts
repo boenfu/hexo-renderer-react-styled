@@ -1,3 +1,5 @@
+import 'require-tsx';
+
 import {renderer} from './@renderer';
 
 hexo.extend.renderer.register('jsx', 'html', renderer, false);
