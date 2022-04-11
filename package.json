@@ -23,6 +23,7 @@
     "prepublishOnly": "yarn test"
   },
   "dependencies": {
+    "@svgr/core": "^6.2.1",
     "@types/hexo": "^3.8.7",
     "@types/node": "^17.0.23",
     "decache": "^4.6.1",

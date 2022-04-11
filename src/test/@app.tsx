@@ -1,6 +1,8 @@
 import React, {FC} from 'react';
 import styled from 'styled-components';
 
+import Github from './@github.svg';
+
 const App = styled.div`
   width: 360px;
   height: 360px;
@@ -26,6 +28,7 @@ const Test: FC = () => {
   return (
     <App>
       <Text>hexo-renderer-react-styled</Text>
+      <Github />
     </App>
   );
 };

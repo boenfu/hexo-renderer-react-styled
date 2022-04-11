@@ -1,9 +1,10 @@
 import * as FS from 'fs/promises';
 import * as Path from 'path';
 
-import 'require-tsx';
-
+// inject compiler
 // eslint-disable-next-line @mufan/import-path-shallowest
+import '../../bld/library/@inject';
+
 import {ComponentProps} from '../../bld/library';
 // eslint-disable-next-line @mufan/import-path-shallowest
 import {renderer} from '../../bld/library/@renderer';
@@ -12,6 +13,7 @@ import {renderer} from '../../bld/library/@renderer';
 (async () => {
   let props!: ComponentProps;
 
+  // import source file
   let filePath = Path.join(__dirname, '../../src/test/@app.tsx');
 
   let result = await renderer(
@@ -23,6 +25,12 @@ import {renderer} from '../../bld/library/@renderer';
   );
 
   if (!result.includes('#06f')) {
-    throw Error('THE_ONLY_ONE_TEST_CASES_FAILED');
+    throw Error('Styled components transform failed');
   }
+
+  if (!result.includes('fill="currentColor"')) {
+    throw Error('Svg transform failed');
+  }
+
+  console.info('Test passed');
 })();

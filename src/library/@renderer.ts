@@ -2,7 +2,7 @@ import {createElement} from 'react';
 import {renderToStaticMarkup} from 'react-dom/server';
 import {ServerStyleSheet, StyleSheetManager} from 'styled-components';
 
-import {ComponentProps} from './props';
+import {ComponentProps} from './@props';
 
 export async function renderer(
   {
