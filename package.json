@@ -1,6 +1,6 @@
 {
   "name": "hexo-renderer-react-styled",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "license": "MIT",
   "author": "boenfu",
   "main": "bld/library/index.js",
