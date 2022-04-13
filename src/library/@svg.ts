@@ -1,6 +1,6 @@
 import {transform as svgTransform} from '@svgr/core';
 
-import {noCacheComplier} from './@decache';
+import {watchComplier} from './@watch';
 
 export function svgComplier(
   this: any,
@@ -21,5 +21,5 @@ export function svgComplier(
     },
   );
 
-  return noCacheComplier.call(this, content, fileName);
+  return watchComplier.call(this, content, fileName);
 }

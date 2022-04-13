@@ -1,11 +1,11 @@
 import {inject} from 'require-tsx';
 
-import {noCacheComplier} from './@decache';
 import {svgComplier} from './@svg';
+import {watchComplier} from './@watch';
 
 inject({
-  '.jsx': noCacheComplier,
-  '.ts': noCacheComplier,
-  '.tsx': noCacheComplier,
+  '.jsx': watchComplier,
+  '.ts': watchComplier,
+  '.tsx': watchComplier,
   '.svg': svgComplier,
 });
