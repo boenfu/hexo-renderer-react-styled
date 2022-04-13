@@ -6,39 +6,36 @@
 
 - zero configure
 - import sub components directly
-- file extensions support `.tsx` `.ts` `.jsx` `.svg`
+- file extensions support `.tsx` `.ts` `.jsx` `.svg` `.css`
 - auto transform svg source file to react component by [svgr](https://github.com/gregberge/svgr)
 
 ## Example
 
-- theme directory
+- theme directory example
 
 ```bash
 └── your-theme
     ├── layout
     │   ├── components
     │   │   ├── header.tsx
-    │   │   ├── index.ts
-    │   │   └── posts
-    │   │       ├── @item.tsx
-    │   │       ├── index.ts
-    │   │       └── posts.tsx
-    │   ├── icons
-    │   │   └── github.svg
+    │   │   └── index.ts
     │   ├── index.tsx
     │   └── layout.tsx
     └── tsconfig.json
 ```
 
-- index page example
+- page view example
 
 ```tsx
 // index.tsx
 import React, {FC} from 'react';
 import styled from 'styled-components';
+// import directly
 import {Posts} from './components';
 // see usage/svg
 import Github from './icons/github.svg';
+// see usage/css
+import MarkdownCSS from './css/markdown.css';
 
 const Index = styled.div`
   // ... css
@@ -46,6 +43,7 @@ const Index = styled.div`
 
 const Main = styled.div`
   // ... css
+  ${MarkdownCSS}
 `;
 
 const Sidebar = styled.div`
@@ -95,6 +93,27 @@ declare module '*.svg' {
 ```
 
 svgComplier will replace `#000`/`#000000` to `currentColor` by default
+
+### CSS
+
+If need import ".css" file, add module declare file for your project.
+
+```ts
+declare module '*.css' {
+  const text: string;
+  export default text;
+}
+```
+
+usage example
+
+```ts
+import markdownCSS from './markdown.css';
+
+const MarkdownContent = styled.div`
+  ${markdownCSS}
+`;
+```
 
 ## Who Use
 
