@@ -9,12 +9,14 @@ export function watchComplier(
   content: string,
   fileName: string,
 ): string {
-  let hasNumber = hash(content);
+  let existed = moduleHashMap.get(fileName);
+  let current = hash(content);
 
-  if (moduleHashMap.get(fileName) !== hasNumber) {
+  if (existed && existed !== current) {
     decache(fileName);
-    moduleHashMap.set(fileName, hasNumber);
   }
+
+  moduleHashMap.set(fileName, current);
 
   return defaultContentCompiler.call(this, content, fileName);
 }
