@@ -39,8 +39,8 @@ interface Site {
   data: {[key: string]: any};
 }
 
-type HexoCssHelperParams = string | HTMLElementTagNameMap['link'];
-type HexoJsHelperParams = string | HTMLElementTagNameMap['script'];
+type HexoCssHelperParams = string | Record<string, any>;
+type HexoJsHelperParams = string | Record<string, any>;
 
 export interface ComponentProps<
   TConfig extends Hexo['config'] = Hexo['config'],
