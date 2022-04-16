@@ -272,6 +272,10 @@ export interface ComponentProps<
     },
   ): string;
 
+  /// i18n
+  __(path: string): string;
+  _p(path: string): string;
+
   // 文档中没有的
   // inspect: [Function: bound inspectObject],
   // log: [Function: bound log]
