@@ -33,9 +33,15 @@ export async function renderer(
 
     return `${styles}${html}`;
   } catch (error: any) {
-    console.error(error);
-    return (error as Error)?.stack ?? '';
+    console.error(error?.message);
+    return errorHint((error as Error)?.message ?? '');
   } finally {
     sheet.seal();
   }
+}
+
+function errorHint(error: string): string {
+  return `<pre style="max-width:640px;color: #fff;background: rgba(0,0,0,0.6);backdrop-filter: blur(2px);border-radius: 4px;padding: 24px;margin: 24px auto;box-shadow: 0 0 2px #000;line-height: 1.4;text-shadow: 0 0 2px #000;word-break: break-all;white-space: pre-line;">${error
+    .split('\n')
+    .join('<br />')}</pre>`;
 }
